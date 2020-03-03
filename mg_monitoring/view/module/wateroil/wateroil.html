@@ -1,0 +1,58 @@
+<div class="wateroil">
+	<!--上方的div-->
+	<div class="up_div">
+		<div class="table">
+			<div class="table_box">
+	            <table>
+	                <thead>
+	                <tr>
+	                    <th>轧机</th>
+	                    <th>油压</th>
+	                    <th>水压</th>
+	                    <th>流量</th>
+	                    <th>水油比例</th>
+	                    <th>功能是否投用</th>
+	                </tr>
+	                </thead>
+	                <tbody>
+	                <tr ng-repeat="item in tableList">
+	                    <td>{{item.zj}}</td>
+	                    <td>{{item.yy}}</td>
+	                    <td>{{item.sy}}</td>
+	                    <td>{{item.ll}}</td>
+	                    <td>{{item.bl}}</td>
+	                    <td>
+	                    	<span ng-if="item.ty == 0">未投入</span>
+                        	<span ng-if="item.ty == 1">已投入</span>
+	                    </td>
+	                    
+	                </tr>
+	                </tbody>
+	            </table>
+	        </div>
+		</div>
+		<div class="echarts">
+			<div id="touruLine" class="echarts_line"></div>
+		</div>
+	</div>
+	<!--下方的div-->
+	<div class="down_div">
+		<div class="div_rows">
+			<div class="div_block">
+				<div id="shuiyaLine" class="echarts_line2"></div>
+			</div>
+			<div class="div_block">
+				<div id="youyaLine" class="echarts_line2"></div>
+			</div>
+		</div>
+		
+		<div class="div_rows">
+			<div class="div_block">
+				<div id="liuliangLine" class="echarts_line2"></div>
+			</div>
+			<div class="div_block">
+				<div id="biliLine" class="echarts_line2"></div>
+			</div>
+		</div>
+	</div>
+</div>

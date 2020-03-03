@@ -1,0 +1,74 @@
+ <div class="forceManage">
+    <div class="header_box">
+        <div class="group_box">
+				<div class="form_group_new">
+                	<label for="">时间</label>
+                	<input type="text" ng-model="params.queryObj.time">
+            	</div>
+            	<div class="form_group_new">
+                	<label for="">卷号</label>
+                	<input type="text" ng-model="params.queryObj.time">
+            	</div>
+            	<div class="form_group_new">
+                	<label for="">是否投用</label>
+                	<!--<input type="text" ng-model="params.queryObj.time">-->
+                	<select  ng-model="params.queryObj.time">
+				    	<option value="">请选择</option>
+				    	<option  value="0">未投用</option>
+				    	<option  value="1">已投用</option>
+					</select>
+            	</div>
+            	<div class="form_group_new">
+                	<label for="">同规格的钢卷号</label>
+                	<input type="text" ng-model="params.queryObj.time">
+            	</div>
+            	<div class="form_group_new">
+                	<label for="">是否投用</label>
+                	<!--<input type="text" ng-model="params.queryObj.time">-->
+                	<select  ng-model="params.queryObj.time">
+				    	<option value="">请选择</option>
+				    	<option  value="0">未投用</option>
+				    	<option  value="1">已投用</option>
+					</select>
+            	</div>
+        </div>
+        <div class="query_box">
+            <button ng-click="queryByCondition()" class="btn querybtn">查询</button>
+            <button ng-click="reset()" class="btn querybtn_all">重置</button>
+        </div>
+    </div>
+    <div class="body_box">
+    	<div id="shuiyaLine" class="echarts_line2"></div>
+    </div>
+    <div class="body_box">
+        <div class="table_box">
+            <table>
+                <thead>
+                <tr>
+                    <th>卷号</th>
+                    <th>f1</th>
+                    <th>f2</th>
+                    <th>f3</th>
+                    <th>f4</th>
+                    <th>f5</th>
+                    <th>f6</th>
+                    <th>f7</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in list">
+					<td>{{item.jh}}</td>
+					<td>{{item.f1}}</td>
+					<td>{{item.f2}}</td>
+					<td>{{item.f3}}</td>
+					<td>{{item.f4}}</td>
+					<td>{{item.f5}}</td>
+					<td>{{item.f6}}</td>
+					<td>{{item.f7}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<tm-pagination conf="paginationConf"></tm-pagination>-->
+        </div>
+    </div>
+</div>

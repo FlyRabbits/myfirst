@@ -1,0 +1,54 @@
+<div class="cool">
+	<!--上方的div-->
+	<div class="up_div">
+		<div class="table">
+			<div class="table_box">
+	            <table>
+	                <thead>
+	                <tr>
+	                    <th>轧机</th>
+	                    <th>冷却水角度</th>
+	                    <th>冷却水压力</th>
+	                    <th>除磷水角度</th>
+	                    <th>除磷水压力</th>
+	                    <th>除磷水流量</th>
+	                </tr>
+	                </thead>
+	                <tbody>
+	                <tr ng-repeat="item in tableList">
+	                    <td>{{item.zj}}</td>
+	                    <td>{{item.ljd}}</td>
+	                    <td>{{item.lyl}}</td>
+	                    <td>{{item.cjd}}</td>
+	                    <td>{{item.cyl}}</td>
+	                    <td>{{item.cll}}</td>
+	                </tr>
+	                </tbody>
+	            </table>
+	        </div>
+		</div>
+		<div class="echarts">
+			<div id="touruLine" class="echarts_line"></div>
+		</div>
+	</div>
+	<!--下方的div-->
+	<div class="down_div">
+		<div class="div_rows">
+			<div class="div_block">
+				<div id="shuiyaLine" class="echarts_line2"></div>
+			</div>
+			<div class="div_block">
+				<div id="youyaLine" class="echarts_line2"></div>
+			</div>
+		</div>
+		
+		<div class="div_rows">
+			<div class="div_block">
+				<div id="liuliangLine" class="echarts_line2"></div>
+			</div>
+			<div class="div_block">
+				<div id="biliLine" class="echarts_line2"></div>
+			</div>
+		</div>
+	</div>
+</div>

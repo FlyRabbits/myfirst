@@ -1,0 +1,63 @@
+[
+  {
+    "name": "管理员",
+    "account": "admin",
+    "password": "123456",
+    "menu": [
+      {
+        "menu_name": "权限配置",
+        "menu_url": "",
+        "children": [
+          {
+            "menu_name": "自定义sql",
+            "menu_url": "customSql"
+          },
+          {
+            "menu_name": "权限配置",
+            "menu_url": "userConfig"
+          }
+        ]
+      },
+      {
+        "menu_name": "润滑监控",
+        "menu_url": "",
+        "children": [
+          {
+            "menu_name": "水油监控",
+            "menu_url": "wateroil"
+          },
+          {
+            "menu_name": "油品管理",
+            "menu_url": "oilManage"
+          },
+          {
+            "menu_name": "轧制状态监控",
+            "menu_url": "rollstate"
+          },
+          {
+            "menu_name": "冷却水监控",
+            "menu_url": "cool"
+          }
+        ]
+      },
+      {
+        "menu_name": "工艺质量分析",
+        "menu_url": "",
+        "children": [
+          {
+            "menu_name": "轧制力分析",
+            "menu_url": "force"
+          },
+          {
+            "menu_name": "产品表面分析",
+            "menu_url": "surface"
+          },
+          {
+            "menu_name": "产品质量分析",
+            "menu_url": ""
+          }
+        ]
+      }
+    ]
+  }
+]

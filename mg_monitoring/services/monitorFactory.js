@@ -1,0 +1,136 @@
+monitor.factory('httpInterceptor', ["$q", "$injector", function ($q) {
+    return {
+        request: function (config) {
+               config.headers = config.headers || {};
+            //config.headers['Content-Type'] = "application/x-www-form-urlencoded; charset=UTF-8"
+//          config.headers = {
+//              'Content-Type':'application/x-www-form-urlencoded'
+//          }
+            return config
+        },
+        requestError: function (err) {
+            console.log(err)
+        },
+        response: function (res) {
+            // console.log('responseSuccess')
+            return res;
+        },
+        responseError: function (err) {
+            console.log(err)
+        }
+    };
+}])
+
+
+    //test
+    .factory('hahhaha', ['$resource', function ($resource) {
+        return $resource('http://localhost/hmiDataGate/HmiDataGate.asmx/GetHmiData')
+    }])
+//pcdp
+/*发送本项目所需要的变量*/
+    .factory('SendHmiParam', ['$resource', function ($resource) {
+        return $resource(IP + 'webservice/createHash')
+    }])
+    .factory('GetHmiParam', ['$resource', function ($resource) {
+        return $resource(IP + 'webservice/getHashByParam')
+    }])
+
+
+    .factory('GetHmiData', ['$resource', function ($resource) {
+        return $resource(IP + 'webservice/getHmiData')
+    }])
+    .factory('GetLogData', ['$resource', function ($resource) {
+        return $resource(IP + 'webservice/getLogData')
+    }])
+    .factory('SendTag', ['$resource', function ($resource) {
+        return $resource(IP + 'webservice/sendTag')
+    }])
+    .factory('SendMessage', ['$resource', function ($resource) {
+        return $resource(IP + 'webservice/sendMessage')
+    }])
+    .factory('GetLogData', ['$resource', function ($resource) {
+        return $resource(IP + 'webservice/getLogData')
+    }])
+
+    //本地缓存操作
+    .factory('locals', ['$window', function ($window) {
+        return {        //存储单个属性
+            set: function (key, value) {
+                $window.localStorage[key] = value;
+            },        //读取单个属性
+            get: function (key, defaultValue) {
+                return $window.localStorage[key] || defaultValue;
+            },        //存储对象，以JSON格式存储
+            setObject: function (key, value) {
+                $window.localStorage[key] = JSON.stringify(value);//将对象以字符串保存
+            },        //读取对象
+            getObject: function (key) {
+                return JSON.parse($window.localStorage[key] || '{}');//获取字符串并解析成对象
+            }
+
+        }
+    }])
+    //自定义接口
+    //查询
+    .factory('CustomFindByPage', ['$resource', function ($resource) {
+        return $resource(IP + 'controlInterface/findByPage')
+    }])
+    //添加
+    .factory('CustomInsert', ['$resource', function ($resource) {
+        return $resource(IP + 'controlInterface/insert')
+    }])
+    //查询单条
+    .factory('CustomFindByIndocno', ['$resource', function ($resource) {
+        return $resource(IP + 'controlInterface/findByIndocno')
+    }])
+
+    //修改
+    .factory('CustomUpdate', ['$resource', function ($resource) {
+        return $resource(IP + 'controlInterface/update')
+    }])
+    //删除
+    .factory('CustomDeleteOne', ['$resource', function ($resource) {
+        return $resource(IP + 'controlInterface/deleteOne')
+    }])
+    //自定义sql查询
+    .factory('commonFindData', ['$resource', function ($resource) {
+        return $resource(IP + 'common/findData')
+    }])
+    //自定义sql(blob)查询
+    .factory('commonFindBlob', ['$resource', function ($resource) {
+        return $resource(IP + 'common/findBlob')
+    }])
+    .factory('commonFindBlobNo', ['$resource', function ($resource) {
+        return $resource(IP + 'common/findBlobNo')
+    }])
+    //http://localhost:8089/json/createJson
+    .factory('createJson', ['$resource', function ($resource) {
+        return $resource(IP + 'json/createJson')
+    }])
+    
+    //新建油品管理
+	.factory('OilInsert', ['$resource', function($resource) {
+	    return $resource(IP + 'oil/insert')
+	}])
+	
+	//删除油品管理
+	.factory('DeleteOneOil', ['$resource', function($resource) {
+	    return $resource(IP + 'oil/deleteOne')
+	}])
+	
+	//修改单条油品管理
+	.factory('UpdateOil', ['$resource', function($resource) {
+	    return $resource(IP + 'oil/update')
+	}])
+	
+	//油品管理分页查询
+	.factory('OilFindByPage', ['$resource', function($resource) {
+	    return $resource(IP + 'oil/findByPage')
+	}])
+	//查询单条油品管理
+	.factory('FindByIndocnoOil', ['$resource', function($resource) {
+	    return $resource(IP + 'oil/findByIndocno')
+	}])
+
+
+;

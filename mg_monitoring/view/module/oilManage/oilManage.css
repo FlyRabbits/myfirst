@@ -1,0 +1,75 @@
+.oilManage .header_box .query_box {
+  padding-top: 28px;
+}
+.public_sure_cancel_cont {
+  height: auto;
+  width: 100%;
+}
+.adduser .tip {
+  font-size: 16px;
+  padding: 8px 15px;
+  letter-spacing: 2px;
+  background-color: #337ab7;
+  color: #ffffff;
+}
+.adduser .bullet_box {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 0px 10px;
+}
+.adduser .bullet_box .form_group_oil {
+  width: 33%;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+.adduser .bullet_box .form_group_oil label {
+  font-size: 13px;
+  min-width: 65px;
+  display: inline-block;
+  text-align: right;
+  color: #333333;
+  margin-right: 10px;
+}
+.adduser .bullet_box .form_group_oil .pbin {
+  padding: 2px 8px;
+  border: 1px solid #e5e5e5;
+  outline: medium;
+  visibility: inherit;
+  width: 200px;
+  height: 25px;
+  border-radius: 2px;
+}
+.adduser .bullet_box .form_group select {
+  padding: 2px 8px;
+  border: 1px solid #e5e5e5;
+  outline: medium;
+  visibility: inherit;
+  width: 110px;
+  height: 25px;
+  border-radius: 2px;
+}
+.adduser .bullet_box .form_group div {
+  display: inline-block;
+  margin-right: 5px;
+}
+.adduser .bullet_box .form_group table {
+  width: 100%;
+}
+.adduser .bullet_box .form_group table thead {
+  background-color: #e5e5e5;
+}
+.adduser .bullet_box .form_group table thead tr th {
+  border: 1px solid #dddddd;
+}
+.adduser .bullet_box .form_group table thead tr th input {
+  vertical-align: middle;
+}
+.adduser .bullet_box .form_group table tbody {
+  text-align: center;
+}
+.adduser .bullet_box .form_group table tbody tr td {
+  border: 1px solid #dddddd;
+}
+.adduser .bullet_box .form_group table tbody tr td input {
+  vertical-align: middle;
+}

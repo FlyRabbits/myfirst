@@ -1,0 +1,151 @@
+ <div class="inforManage">
+    <div class="header_box">
+        <div class="group_box">
+				<div class="form_group">
+                	<label for="">辊号</label>
+                	<input type="text" ng-model="params.queryOilObj.brand">
+            	</div>
+        </div>
+        <div class="query_box">
+            <button ng-click="queryByCondition()" class="btn querybtn">查询</button>
+            <button ng-click="addOil()" class="btn querybtn_all">添加</button>
+            <button ng-click="reset()" class="btn querybtn_all">重置</button>
+        </div>
+
+    </div>
+    <div class="body_box">
+        <div class="table_box">
+            <table>
+                <thead>
+                <tr>
+                    <th>辊号</th>
+                    <th>辊径(mm)</th>
+                    <th>种类</th>
+                    <th>轧制公里数(km)</th>
+                    <th>轧制吨位(吨)</th>
+                    <th>磨削量</th>
+                    <th>磨前曲线</th>
+                    <th>上下线时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in list">
+					<td>{{item.f1}}</td>
+					<td>{{item.f2}}</td>
+					<td>{{item.f3}}</td>
+					<td>{{item.f4}}</td>
+					<td>{{item.f5}}</td>
+					<td>{{item.f6}}</td>
+					<td>{{item.f7}}</td>
+					<td>{{item.f8}}</td>
+                    <td>
+                        <button ng-click="deleteOil(item.indocno)" class="plb_ch del">删除<i class="fa fa-trash-o"></i></button>
+                        <button ng-click="modOil(item.indocno)" class="plb_ch sub">修改<i class="fa fa-eyedropper"></i></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<tm-pagination conf="paginationConf"></tm-pagination>-->
+        </div>
+    </div>
+</div>
+<script  type="text/ng-template" id="deleteOil">
+    <div class="public_sure_cancel_cont">
+        <div class="tip">确定删除吗?</div>
+        <div class="btn_container">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_sure" ng-click="sure()">确定</button>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="addOil">
+    <div class="public_sure_cancel_cont adduser">
+        <div class="tip">添加油品管理</div>
+        <div class="bullet_box">
+        	<div class="form_group_new">
+                <label>牌号</label>
+                <input ng-model="params.addOilObj.brand" type="text" class="pbin">
+            </div>
+            <div class="form_group_new">
+                <label>供应商</label>
+                <input ng-model="params.addOilObj.supplycompany" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>外观</label>
+                <input ng-model="params.addOilObj.appear" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>酸值</label>
+                <input ng-model="params.addOilObj.acid" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>闪点</label>
+                <input ng-model="params.addOilObj.flashpoint" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>燃点</label>
+                <input ng-model="params.addOilObj.burnpoint" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>凝点</label>
+                <input ng-model="params.addOilObj.condenpoint" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>密度</label>
+                <input ng-model="params.addOilObj.density" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>粘度</label>
+                <input ng-model="params.addOilObj.viscosity" type="text" class="pbin">
+            </div>
+        </div>
+        <div class="btn_container">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_sure" ng-click="sure()">确定</button>
+        </div>
+    </div>
+</script>
+<script type="text/ng-template" id="modOil">
+    <div class="public_sure_cancel_cont adduser">
+        <div class="tip">修改油品管理</div>
+        <div class="bullet_box">
+        	<div class="form_group_new">
+                <label>牌号</label>
+                <input ng-model="params.addOilObj.brand" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>外观</label>
+                <input ng-model="params.addOilObj.appear" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>酸值</label>
+                <input ng-model="params.addOilObj.acid" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>闪点</label>
+                <input ng-model="params.addOilObj.flashpoint" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>燃点</label>
+                <input ng-model="params.addOilObj.burnpoint" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>凝点</label>
+                <input ng-model="params.addOilObj.condenpoint" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>密度</label>
+                <input ng-model="params.addOilObj.density" type="text" class="pbin">
+            </div>
+        	<div class="form_group_new">
+                <label>粘度</label>
+                <input ng-model="params.addOilObj.viscosity" type="text" class="pbin">
+            </div>
+        </div>
+        <div class="btn_container">
+            <button class="btn_cancel" ng-click="cancel()">取消</button>
+            <button class="btn_sure" ng-click="sure()">确定</button>
+        </div>
+    </div>
+</script>

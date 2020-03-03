@@ -1,0 +1,48 @@
+ <div class="surfaceManage">
+    <div class="header_box">
+        <div class="group_box">
+				<div class="form_group_new">
+                	<label for="">时间</label>
+                	<input type="text" ng-model="params.queryObj.time">
+            	</div>
+        </div>
+        <div class="query_box">
+            <button ng-click="queryByCondition()" class="btn querybtn">查询</button>
+            <button ng-click="reset()" class="btn querybtn_all">重置</button>
+        </div>
+    </div>
+    <div class="body_box">
+    	<div id="shuiyaLine" class="echarts_line2"></div>
+    </div>
+    <div class="body_box">
+        <div class="table_box">
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>缺陷1</th>
+                    <th>缺陷2</th>
+                    <th>缺陷3</th>
+                    <th>缺陷4</th>
+                    <th>缺陷5</th>
+                    <th>缺陷6</th>
+                    <th>缺陷7</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in list">
+					<td>{{item.type}}</td>
+					<td>{{item.f1}}</td>
+					<td>{{item.f2}}</td>
+					<td>{{item.f3}}</td>
+					<td>{{item.f4}}</td>
+					<td>{{item.f5}}</td>
+					<td>{{item.f6}}</td>
+					<td>{{item.f7}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <!--<tm-pagination conf="paginationConf"></tm-pagination>-->
+        </div>
+    </div>
+</div>
